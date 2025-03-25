@@ -25,21 +25,21 @@ sealed class ThemeColor {
 
   @Serializable @SerialName("RGB")
   data class RGB(
-    @JsonSchema.IntRange(0, 255) val r: Int,
-    @JsonSchema.IntRange(0, 255) val g: Int,
-    @JsonSchema.IntRange(0, 255) val b: Int
+    @JsonSchema.IntegerRange(0, 255) val r: Int,
+    @JsonSchema.IntegerRange(0, 255) val g: Int,
+    @JsonSchema.IntegerRange(0, 255) val b: Int
   ) : ThemeColor()
 
   @Serializable @SerialName("HSV")
   data class HSV(
-    @JsonSchema.IntRange(1, 360) val h: Int,
+    @JsonSchema.IntegerRange(1, 360) val h: Int,
     @FloatRange(0.0, 1.0) val s: Double,
     @FloatRange(0.0, 1.0) val v: Double
   ) : ThemeColor()
 
   @Serializable @SerialName("HSL")
   data class HSL(
-    @JsonSchema.IntRange(1, 360) val h: Int,
+    @JsonSchema.IntegerRange(1, 360) val h: Int,
     @FloatRange(0.0, 1.0) val s: Double,
     @FloatRange(0.0, 1.0) val l: Double
   ) : ThemeColor()
